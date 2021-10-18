@@ -31,21 +31,20 @@ namespace WpfApp1.pages
         {
             try
             {
-                BaseConnect.CurrentUsers = BaseConnect.BaseModel.auth.FirstOrDefault(x => x.login == txtLogin.Text && x.password == txtPassword.Password);
-                if (BaseConnect.CurrentUsers != null)
+                auth CurrentUsers = BaseConnect.BaseModel.auth.FirstOrDefault(x => x.login == txtLogin.Text && x.password == txtPassword.Password);
+                if (CurrentUsers != null)
                 {//тут будет алгоритм перехода на страницу в зависимости от роля пользователя
-                    switch(BaseConnect.CurrentUsers.role)
+                    switch(CurrentUsers.role)
                     {
                         case 1:
                             MessageBox.Show("Вы зашли как админ");
-                            LoadPages.MainFrame.Navigate(new adminMenu());
+                            LoadPages.MainFrame.Navigate(new PageUsersList());
                             break;
                         case 2:
                             MessageBox.Show("Вы зашли как обычный пользователь");
-                            LoadPages.MainFrame.Navigate(new Info());
+                            LoadPages.MainFrame.Navigate(new Info(CurrentUsers));
                             break;
                     }
-                    LoadPages.MainFrame.Navigate(new Info());
                     MessageBox.Show("Ооо добро пожаловать");
 
                 }

@@ -9,8 +9,10 @@
       Title="adminMenu">
 
     <Grid>
+        <ScrollViewer>
         <StackPanel>
-            <DataGrid x:Name="dgUsers" AutoGenerateColumns="False">
+            
+                <DataGrid x:Name="dgUsers" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Логин" Binding="{Binding login}"/>
                     <DataGridTextColumn Header="Пароль" Binding="{Binding password}"/>
@@ -21,7 +23,13 @@
                     <DataGridTextColumn Header="Пол" Binding="{Binding users.genders.gender}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="btsSaveChanges" Content="Сохранить изменения" Click="btsSaveChanges_Click"/>
-        </StackPanel>
+            
+            <Button x:Name="btnSaveChanges" Content="Сохранить изменения" Click="btnSaveChanges_Click"/>
+            <TextBlock Text="удаление пользователя из таблицы:"/>
+            <Button x:Name="btnDeleteUser" Content="Удалить выбранного пользователя" Click="btnDeleteUser_Click"/>
+                <Button x:Name="btnEditUser" Content="Редактировать выбранного пользователя" Click="btnEditUser_Click"/>
+                <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

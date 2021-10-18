@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp1.pages
+{
+    /// <summary>
+    /// Логика взаимодействия для EditUser.xaml
+    /// </summary>
+    public partial class EditUser : Page
+    {
+        public EditUser()
+        {
+            InitializeComponent();
+        }
+
+        private void btnSaveEdit_Click(object sender, RoutedEventArgs e)
+        {
+            //тут что-то будет
+            MessageBox.Show("Изменения успешно сохранены");
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.GoBack();
+        }
+    }
+}

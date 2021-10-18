@@ -11,6 +11,5 @@ namespace WpfApp1
     class BaseConnect
     {
         public static Entities BaseModel;
-        public static auth CurrentUsers;
     }
 }

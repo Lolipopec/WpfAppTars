@@ -18,7 +18,7 @@
                                 <!--<TextBox Name="Naame"  VerticalAlignment="Top" Height="20" Width="100" ></TextBox>-->
                                 <TextBlock x:Name="tbName"/>
                             </GroupBox>
-                            <GroupBox Header="дата родения" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="132">
+                            <GroupBox Header="дата рождения" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="132">
                                 <!--<DatePicker Name="BirthDay" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="129"></DatePicker>-->
 
                                 <TextBlock x:Name="tbDR"/>
@@ -44,7 +44,6 @@
 
                     </GroupBox>
                     <Button Content="Назад" Name="btnBack" Click="btnBack_Click" />
-                    <!--<Button Content="Записать"  />-->
                 </StackPanel>
                 <!--<StackPanel>
                     <GroupBox Header="Считывание информации" Margin="10" >

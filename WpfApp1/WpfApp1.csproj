@@ -80,6 +80,12 @@
     <Compile Include="pages\adminMenu.xaml.cs">
       <DependentUpon>adminMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\EditUser.xaml.cs">
+      <DependentUpon>EditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\PageUsersList.xaml.cs">
+      <DependentUpon>PageUsersList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\reg.xaml.cs">
       <DependentUpon>reg.xaml</DependentUpon>
     </Compile>
@@ -112,11 +118,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\EditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\Info.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\PageUsersList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

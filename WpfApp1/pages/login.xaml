@@ -17,7 +17,7 @@
                 <GroupBox Header="Введите пароль">
                     <PasswordBox x:Name="txtPassword"/>
                 </GroupBox>
-                <Button Content="Авторизоваться" Name="btnLogin" Click="btnLogin_Click" />
+                <Button Content="Авторизоваться" Name="btnLogin" Click="btnLogin_Click" IsDefault="True"/>
                 <Button Content="Зарегистрироваться" Name="btnRegn" Click="btnRegn_Click" />
             </StackPanel>
         </GroupBox>

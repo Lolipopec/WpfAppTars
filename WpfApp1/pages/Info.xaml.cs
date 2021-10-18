@@ -23,16 +23,16 @@ namespace WpfApp1.pages
     /// </summary>
     public partial class Info : Page
     {
-        public Info()
+        public Info(auth CurrentUsers)
         {
             InitializeComponent();
             try
             {
-                tbName.Text = BaseConnect.CurrentUsers.users.name;
-                tbDR.Text = BaseConnect.CurrentUsers.users.dr.ToString("yyyy MM dd");
-                tbGender.Text = BaseConnect.CurrentUsers.users.genders.gender;
+                tbName.Text = CurrentUsers.users.name;
+                tbDR.Text = CurrentUsers.users.dr.ToString("yyyy MM dd");
+                tbGender.Text = CurrentUsers.users.genders.gender;
                 //cписок из качеств личности авторизованного пользователя
-                List<users_to_traits> LUTT = BaseConnect.BaseModel.users_to_traits.Where(x => x.id_user == BaseConnect.CurrentUsers.id).ToList();
+                List<users_to_traits> LUTT = BaseConnect.BaseModel.users_to_traits.Where(x => x.id_user == CurrentUsers.id).ToList();
                 foreach (users_to_traits UT in LUTT)
                 {
                     tbTraits.Text += UT.traits.trait + "; ";

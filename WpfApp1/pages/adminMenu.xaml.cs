@@ -26,10 +26,29 @@ namespace WpfApp1.pages
             dgUsers.ItemsSource = BaseConnect.BaseModel.auth.ToList();
         }
 
-        private void btsSaveChanges_Click(object sender, RoutedEventArgs e)
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
         {
             BaseConnect.BaseModel.SaveChanges();
             MessageBox.Show("Изменения сохранены");
+        }
+
+        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            auth SelectedUser = (auth)dgUsers.SelectedItem;//сохраняем выбранную строку в отдельный объект
+            BaseConnect.BaseModel.auth.Remove(SelectedUser);// удаляем выбранную строку
+            BaseConnect.BaseModel.SaveChanges();//синхронизируем изменения с сервером 
+            MessageBox.Show("Пользователь успешно удален");
+            dgUsers.ItemsSource = BaseConnect.BaseModel.auth.ToList();//Обновить строки а датагрид
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.GoBack();
+        }
+
+        private void btnEditUser_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.Navigate(new EditUser());
         }
     }
 }

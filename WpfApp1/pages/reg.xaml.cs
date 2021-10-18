@@ -26,6 +26,9 @@ namespace WpfApp1.pages
             listGenders.ItemsSource = BaseConnect.BaseModel.genders.ToList();//выбор источника данных
             listGenders.SelectedValuePath = "id";//индексы пунктов списка
             listGenders.DisplayMemberPath = "gender";//то что отображается для пользователя
+
+           lbTarits.ItemsSource = BaseConnect.BaseModel.traits.ToList();
+            lbTarits.SelectedValuePath = "id";
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -42,7 +45,8 @@ namespace WpfApp1.pages
             //создаем данные в таблице юзеров, соответствующую данной
             users User = new users() { name = txtName.Text, id = logPass.id, gender = (int)listGenders.SelectedValue, dr = (DateTime)date.SelectedDate };
             BaseConnect.BaseModel.users.Add(User);
-            if(cb1.IsChecked==true)
+
+            if (cb1.IsChecked == true)
             {
                 users_to_traits UTT = new users_to_traits();
                 UTT.id_user = User.id;
@@ -64,11 +68,14 @@ namespace WpfApp1.pages
                 BaseConnect.BaseModel.users_to_traits.Add(UTT);
             }
 
-            BaseConnect.BaseModel.SaveChanges();
-
-
-
-
+            //foreach (traits t in lbTarits.SelectedItems)
+            //{
+            //    users_to_traits UTT = new users_to_traits();
+            //    UTT.id_user = User.id;
+            //    UTT.id_trait = t.id;
+            //    BaseConnect.BaseModel.users_to_traits.Add(UTT);
+            //}
+            //BaseConnect.BaseModel.SaveChanges();
             MessageBox.Show("Данные записаны успешно");
         }
     }
